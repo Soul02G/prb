@@ -53,8 +53,8 @@ typedef struct Brick {
 //------------------------------------------------------------------------------------
 // Global Variables Declaration
 //------------------------------------------------------------------------------------
-static const int screenWidth = 400;
-static const int screenHeight = 200;
+static const int screenWidth = 1920;
+static const int screenHeight = 1080;
 
 static bool gameOver = false;
 static bool pause = false;
@@ -153,12 +153,8 @@ void UpdateGame(void)
         {
             // Player movement logic
             if (IsKeyDown(KEY_LEFT)) player.position.x -= 5;
-            if (IsKeyDown(KEY_A)) player.position.x -= 5;
-            if (IsKeyDown(KEY_LEFT) && IsKeyDown(KEY_A)) player.position.x -= 10;
             if ((player.position.x - player.size.x / 2) <= 0) player.position.x = player.size.x / 2;
-            if (IsKeyDown(KEY_D)) player.position.x += 5;
             if (IsKeyDown(KEY_RIGHT)) player.position.x += 5;
-            if (IsKeyDown(KEY_RIGHT) && IsKeyDown(KEY_D)) player.position.x += 10;
             if ((player.position.x + player.size.x / 2) >= screenWidth) player.position.x = screenWidth - player.size.x / 2;
 
             // Ball launching logic
